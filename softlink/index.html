@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Code Pattern Explorer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1 class="app-title">Visual Code Pattern Explorer</h1>
+            <p class="app-subtitle">Interactive programming patterns visualization</p>
+        </header>
+
+        <nav class="pattern-nav">
+            <div class="pattern-categories">
+                <button class="category-btn active" data-category="creational">Creational</button>
+                <button class="category-btn" data-category="structural">Structural</button>
+                <button class="category-btn" data-category="behavioral">Behavioral</button>
+                <button class="category-btn" data-category="algorithms">Algorithms</button>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <section class="pattern-selector">
+                <div class="pattern-grid" id="patternGrid">
+                    <!-- Pattern cards will be dynamically generated -->
+                </div>
+            </section>
+
+            <section class="pattern-viewer" id="patternViewer">
+                <div class="viewer-header">
+                    <h2 class="pattern-title" id="patternTitle">Select a Pattern</h2>
+                    <div class="viewer-controls">
+                        <button class="control-btn" id="playBtn">▶ Play</button>
+                        <button class="control-btn" id="stepBtn">→ Step</button>
+                        <button class="control-btn" id="resetBtn">↺ Reset</button>
+                        <div class="speed-control">
+                            <label>Speed:</label>
+                            <input type="range" id="speedSlider" min="1" max="10" value="5">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="viewer-content">
+                    <div class="visualization-area" id="visualizationArea">
+                        <div class="empty-state">
+                            <h3>Choose a pattern to explore</h3>
+                            <p>Select from the patterns above to see interactive visualizations</p>
+                        </div>
+                    </div>
+
+                    <div class="code-panel">
+                        <div class="code-tabs">
+                            <button class="code-tab active" data-lang="javascript">JavaScript</button>
+                            <button class="code-tab" data-lang="python">Python</button>
+                            <button class="code-tab" data-lang="java">Java</button>
+                            <button class="code-tab" data-lang="console">🔧 Console</button>
+                        </div>
+                        <div class="code-display" id="codeDisplay">
+                            <pre><code class="language-javascript">// Select a pattern to see code examples</code></pre>
+                        </div>
+                        <div class="console-container" id="consoleContainer" style="display: none;">
+                            <div class="console-header">
+                                <span>JavaScript Console</span>
+                                <button class="console-btn" id="clearConsoleBtn">Clear</button>
+                            </div>
+                            <div class="console-input-area">
+                                <textarea id="consoleInput" placeholder="Enter JavaScript code here..." class="console-textarea"></textarea>
+                                <button class="console-run-btn" id="runCodeBtn">▶ Run</button>
+                            </div>
+                            <div class="console-output" id="consoleOutput">
+                                <div class="console-line">// Ready to execute JavaScript code...</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pattern-info" id="patternInfo">
+                    <div class="info-tabs">
+                        <button class="info-tab active" data-tab="description">Description</button>
+                        <button class="info-tab" data-tab="use-cases">Use Cases</button>
+                        <button class="info-tab" data-tab="pros-cons">Pros & Cons</button>
+                    </div>
+                    <div class="info-content" id="infoContent">
+                        <div class="info-section active" data-section="description">
+                            <h3>About This Pattern</h3>
+                            <p>Select a pattern to learn more about it.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section" id="quizSection">
+                <div class="quiz-header">
+                    <h3>Pattern Recognition Quiz</h3>
+                    <button class="quiz-btn" id="startQuizBtn">Start Quiz</button>
+                </div>
+                <div class="quiz-content" id="quizContent">
+                    <!-- Quiz questions will be dynamically generated -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
