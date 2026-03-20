@@ -1,0 +1,12 @@
+{
+  "name": "visual-code-pattern-explorer",
+  "version": "1.0.0",
+  "description": "Interactive programming patterns visualization",
+  "scripts": {
+    "start": "python3 -m http.server 3000",
+    "build": "echo 'Static site - no build needed'"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}
